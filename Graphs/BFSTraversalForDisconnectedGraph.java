@@ -2,6 +2,8 @@ import java.util.*;
 
 /*
 Given a disconnected graph, print BFS
+and
+Counting Connected Component in an Undirected Graph
 */
 
 
@@ -64,11 +66,15 @@ public class BFSTraversalForDisconnectedGraph{
    
    public static void BFSDisconnected(ArrayList<ArrayList<Integer>> adj,int vertex){
 	   boolean [] visited= new boolean[vertex+1];
+	   int count=0;
 	   for(int i =0;i<vertex;i++)
 	   {
 		   if(visited[i]==false){
 			   BFS(adj,i,visited);
+			   count++;
 		   }
 	   }
+	   System.out.println("");
+	   System.out.print("No of connected component in undirected graph "+count);
    }
 }
